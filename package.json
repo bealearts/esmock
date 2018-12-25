@@ -1,0 +1,35 @@
+{
+  "name": "esmock",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "lint": "eslint src test",
+    "test:unit": "nyc --extension .mjs --check-coverage --lines 95 --functions 95 --branches 95 ava test/openapi.test.mjs",
+    "test": "npm run lint && npm run test:unit"
+  },
+  "keywords": [
+    "es",
+    "esm",
+    "mock",
+    "mocking"
+  ],
+  "author": {
+    "name": "David Beale",
+    "url": "http://bealearts.co.uk/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:BealeARTS/esmock.git"
+  },
+  "devDependencies": {
+    "ava": "^1.0.0-beta.8",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "esm": "^3.0.82",
+    "nyc": "^13.0.1"
+  },
+  "dependencies": {
+    "stack-trace": "0.0.10"
+  }
+}
