@@ -23,6 +23,7 @@ export default async function esmock(specifier) {
 
 
 export async function resolve(specifier, parentModuleUrl, defaultResolver) {
+  console.log('Loader:', 'resolve');
   resolver = defaultResolver;
   const { url, format } = await defaultResolver(specifier, parentModuleUrl);
 
@@ -34,6 +35,7 @@ export async function resolve(specifier, parentModuleUrl, defaultResolver) {
 
 
 export async function dynamicInstantiate(url) {
+  console.log('Loader:', 'dynamicInstantiate');
   if (url === 'file:///Users/david/Projects/esmock/src/esmock.mjs') {
     return {
       exports: ['default'],
