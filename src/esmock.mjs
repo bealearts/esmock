@@ -1,7 +1,10 @@
 import { dirname, resolve as resolvePath } from 'path';
 import callsites from 'callsites';
 
-const mocks = new Map();
+import 'sideloader';
+
+global.mocks = new Map();
+const mocks = global.mocks;
 
 let resolver;
 

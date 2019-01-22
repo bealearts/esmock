@@ -4,9 +4,10 @@
   "description": "",
   "scripts": {
     "lint": "eslint src/**/*.mjs test/**/*.mjs",
-    "test:unit": "nyc --extension .mjs --check-coverage --lines 95 --functions 95 --branches 95 ava test/index.js",
-    "b": "NODE_OPTIONS='--experimental-modules --loader ./src/esmock.mjs' ava test/index.js",
-    "test": "npm run lint && npm run test:unit"
+    "test:ava": "NODE_OPTIONS='--experimental-modules --loader ./' ava test/ava",
+    "test:mocha": "NODE_OPTIONS='--experimental-modules --loader ./' mocha test/mocha/index.js",
+    "test:nyc": "NODE_OPTIONS='--experimental-modules --loader ./' nyc --extension .mjs --check-coverage --lines 95 --functions 95 --branches 95 ava test/ava",
+    "test": "npm run lint && npm run test:ava"
   },
   "keywords": [
     "es",
@@ -27,10 +28,11 @@
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "esm": "^3.0.82",
+    "mocha": "^5.2.0",
     "nyc": "^13.0.1"
   },
   "dependencies": {
-    "callsites": "^3.0.0"
+    "callsites": "^3.0.0",
+    "sideloader": "^0.1.0"
   }
 }
